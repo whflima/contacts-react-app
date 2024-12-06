@@ -1,10 +1,10 @@
 export interface UserRow {
-    Name: string
-    Username: string
-    Email: string
-    Address: string
-    Phone: string
-    Company: string
+    name: string
+    username: string
+    email: string
+    address: string
+    phone: string
+    company: string
 }
 
 export interface User {
@@ -35,4 +35,9 @@ export interface Company {
   name: string
   catchPhrase: string
   bs: string
+}
+
+export interface Columns {
+    header: string
+    accessor: string
 }

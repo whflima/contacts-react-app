@@ -1,18 +1,13 @@
-import { SetStateAction, useEffect, useState } from 'react';
+import { useEffect, useState } from 'react';
 import { AgGridReact } from 'ag-grid-react';
-import "ag-grid-community/styles/ag-grid.css";
-import "ag-grid-community/styles/ag-theme-quartz.css";
+import '@ag-grid-community/styles/ag-grid.css';
+import '@ag-grid-community/styles/ag-theme-alpine.css';
 import api from '../services/api';
 import { User, UserRow } from '../interfaces/interfaces';
-import { AutoResizeGrid } from './autoResizeGrid';
 
 export default function SimpleGrid() {
-  const [gridApi, setGridApi] = useState();
+  const [gridApi, setGridApi] = useState<any>();
   const [users, setUsers] = useState<User[]>([]);
-
-  const pagination = true;
-  const paginationPageSize = 500;
-  const paginationPageSizeSelector = [200, 500, 1000];
 
   useEffect(() => {
     api
@@ -23,57 +18,69 @@ export default function SimpleGrid() {
       });
   }, []);
 
-  const [colDefs, setColDefs]: any[] = useState([
-    { field: "Name", filter: true, floatingFilter: true },
-    { field: "Username", filter: true },
-    { field: "Phone", filter: true },
-    { field: "Email", filter: true },
-    { field: "Address", filter: true },
-    { field: "Company", filter: true }
-  ]);
-
-  var [mobileColDefs, setMobileColDefs]: any[] = useState([
-    { field: "Name", filter: true, floatingFilter: true },
-    { field: "Company", filter: true }
-  ]);
-
-  /*window.addEventListener('resize', function () {
-      setTimeout(function () {
-          if (window.innerWidth <= 480) {
-              gridOptions.setColumnDefs(mobileColumn);
-              params.api.sizeColumnsToFit();
-          }
-      })
-  });*/
 
   const rowData: UserRow[] = [];
   users.forEach((user: User) => {
     rowData.push({
-      Name: user.name,
-      Username: user.username,
-      Phone: user.phone,
-      Email: user.email,
-      Address: user.address.city,
-      Company: user.company.name
+      name: user.name,
+      username: user.username,
+      phone: user.phone,
+      email: user.email,
+      address: user.address.city,
+      company: user.company.name
     })
   });
 
-  const onGridReady = (params: any) => {
-    setGridApi(params);
-  }
+  const [colDefs, setColDefs]: any[] = useState([
+    { headerName: "Name", field: "name", filter: true, floatingFilter: true },
+    { headerName: "Username", field: "username", filter: true },
+    { headerName: "Phone", field: "phone", filter: true },
+    { headerName: "Email", field: "email", filter: true },
+    { headerName: "Address", field: "address", filter: true },
+    { headerName: "Company", field: "company", filter: true }
+  ]);
 
-  //return <AutoResizeGrid rowData={rowData} columnDefs={colDefs} />;
+  const handleResize = (gridApi: any) => {
+
+    if (gridApi && gridApi.api) {
+      const sizeScreen = window.innerWidth;
+      let columnSuported = Math.floor(sizeScreen / 230);
+      const currentState = gridApi.api.getColumnState();
+
+      currentState.forEach((colState: any) => {
+        if (columnSuported > 0) {
+          gridApi.api.setColumnVisible(colState.colId, true);
+          columnSuported -= 1;
+        } else {
+          gridApi.api.setColumnVisible(colState.colId, false);
+        }
+      });
+    }
+  };
+
+  const onGridReady = (params: any) => {
+    setGridApi(params.api);
+
+    params.api.addGlobalListener((type: string, e: any) => {
+      if (type === "gridSizeChanged" || type === "columnResized") {
+        handleResize(e);
+      }
+    });
+  }
 
   return (
     <div className="App">
-      <div className="ag-theme-quartz" style={{ height: 500 }}>
+      <div className="ag-theme-alpine" style={{ height: 500 }}>
         <AgGridReact
           rowData={rowData}
           columnDefs={colDefs}
           onGridReady={onGridReady}
-        //pagination={pagination}
-        //paginationPageSize={paginationPageSize}
-        //paginationPageSizeSelector={paginationPageSizeSelector}
+          defaultColDef={{
+            flex: 1,
+            resizable: true,
+            sortable: true,
+            filter: true,
+          }}
         />
       </div>
     </div>
