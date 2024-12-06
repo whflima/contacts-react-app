@@ -41,3 +41,12 @@ export interface Columns {
     header: string
     accessor: string
 }
+
+export interface ToggleThemeButtonProps {
+  darkTheme: boolean
+  toggleTheme: any
+}
+
+export interface MenuListProps {
+  darkTheme: boolean
+}

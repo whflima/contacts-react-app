@@ -32,7 +32,7 @@ export default function SimpleGrid() {
   });
 
   const [colDefs, setColDefs]: any[] = useState([
-    { headerName: "Name", field: "name", filter: true, floatingFilter: true },
+    { headerName: "Name", field: "name", filter: true },
     { headerName: "Username", field: "username", filter: true },
     { headerName: "Phone", field: "phone", filter: true },
     { headerName: "Email", field: "email", filter: true },
@@ -44,8 +44,8 @@ export default function SimpleGrid() {
 
     if (gridApi && gridApi.api) {
       const sizeScreen = window.innerWidth;
-      let columnSuported = Math.floor(sizeScreen / 230);
       const currentState = gridApi.api.getColumnState();
+      let columnSuported = Math.floor(sizeScreen / 280);
 
       currentState.forEach((colState: any) => {
         if (columnSuported > 0) {
