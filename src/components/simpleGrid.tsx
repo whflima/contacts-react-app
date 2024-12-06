@@ -1,12 +1,17 @@
 import { useEffect, useState } from 'react';
+import Modal from 'react-modal';
 import { AgGridReact } from 'ag-grid-react';
+import "ag-grid-enterprise";
 import '@ag-grid-community/styles/ag-grid.css';
 import '@ag-grid-community/styles/ag-theme-alpine.css';
 import api from '../services/api';
-import { User, UserRow } from '../interfaces/interfaces';
+import { User } from '../interfaces/interfaces';
+import Map from './Map';
 
 export default function SimpleGrid() {
   const [gridApi, setGridApi] = useState<any>();
+  const [modalIsOpen, setModalIsOpen] = useState(false);
+  const [selectedRowData, setSelectedRowData] = useState<User>();
   const [users, setUsers] = useState<User[]>([]);
 
   useEffect(() => {
@@ -18,27 +23,20 @@ export default function SimpleGrid() {
       });
   }, []);
 
+  const defaultColDef = {
+    flex: 1,
+    resizable: true,
+    sortable: true,
+    filter: true
+  }
 
-  const rowData: UserRow[] = [];
-  users.forEach((user: User) => {
-    rowData.push({
-      name: user.name,
-      username: user.username,
-      phone: user.phone,
-      email: user.email,
-      address: user.address.city,
-      company: user.company.name
-    })
-  });
-
-  const [colDefs, setColDefs]: any[] = useState([
+  const colDefs: any[] = [
     { headerName: "Name", field: "name", filter: true },
     { headerName: "Username", field: "username", filter: true },
     { headerName: "Phone", field: "phone", filter: true },
     { headerName: "Email", field: "email", filter: true },
-    { headerName: "Address", field: "address", filter: true },
-    { headerName: "Company", field: "company", filter: true }
-  ]);
+    { headerName: "Website", field: "website", filter: true },
+  ];
 
   const handleResize = (gridApi: any) => {
 
@@ -68,21 +66,49 @@ export default function SimpleGrid() {
     });
   }
 
+  const onRowClicked = (event: any) => {
+    setSelectedRowData(event.data);
+    setModalIsOpen(true);
+  };
+
   return (
     <div className="App">
-      <div className="ag-theme-alpine" style={{ height: 500 }}>
+      <div className="ag-theme-alpine" style={{ height: 550 }}>
         <AgGridReact
-          rowData={rowData}
+          rowData={users}
           columnDefs={colDefs}
           onGridReady={onGridReady}
-          defaultColDef={{
-            flex: 1,
-            resizable: true,
-            sortable: true,
-            filter: true,
-          }}
+          defaultColDef={defaultColDef}
+          onRowClicked={onRowClicked}
         />
       </div>
+
+      <Modal
+        isOpen={modalIsOpen}
+        onRequestClose={() => setModalIsOpen(false)}
+        contentLabel="Detalhes da Linha"
+        ariaHideApp={false}
+      >
+        <h2>Detalhes da Linha Selecionada</h2>
+        {selectedRowData && (
+          <div>
+            <p><strong>Name:</strong> {selectedRowData.name}</p>
+            <p><strong>Username:</strong> {selectedRowData.username}</p>
+            <p><strong>Email:</strong> {selectedRowData.email}</p>
+            <p><strong>Phone:</strong> {selectedRowData.phone}</p>
+            <p><strong>Website:</strong> {selectedRowData.website}</p>
+
+            <h2>Address</h2>
+            <p><strong>Street:</strong> {selectedRowData.address.street}</p>
+            <p><strong>Suite:</strong> {selectedRowData.address.suite}</p>
+            <p><strong>City:</strong> {selectedRowData.address.city}</p>
+            <p><strong>Zipcode:</strong> {selectedRowData.address.zipcode}</p>
+
+            <Map latitude={-33.8397011} longitude={151.2057175} />
+          </div>
+        )}
+        <button onClick={() => setModalIsOpen(false)}>Fechar</button>
+      </Modal>
     </div>
   );
 }

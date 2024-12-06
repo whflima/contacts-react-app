@@ -48,3 +48,13 @@ body {
 .toggle {
   margin-left: 15px;
 }
+
+.modal-content {
+  background-color: white;
+  padding: 20px;
+  position: absolute;
+  border: 1px solid rgb(204, 204, 204);
+  border-radius: 8px;
+  max-width: 500px;
+  margin: 0 auto;
+}

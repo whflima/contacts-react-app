@@ -50,3 +50,8 @@ export interface ToggleThemeButtonProps {
 export interface MenuListProps {
   darkTheme: boolean
 }
+
+export interface MapProps {
+  latitude: number
+  longitude: number
+}
