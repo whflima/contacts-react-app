@@ -1,12 +1,12 @@
 import { useEffect, useState } from 'react';
-import Modal from 'react-modal';
 import { AgGridReact } from 'ag-grid-react';
 import "ag-grid-enterprise";
 import '@ag-grid-community/styles/ag-grid.css';
 import '@ag-grid-community/styles/ag-theme-alpine.css';
 import api from '../services/api';
 import { User } from '../interfaces/interfaces';
-import Map from './Map';
+import { Modal } from 'antd';
+import ModalContent from './ModalContent';
 
 export default function SimpleGrid() {
   const [gridApi, setGridApi] = useState<any>();
@@ -71,6 +71,11 @@ export default function SimpleGrid() {
     setModalIsOpen(true);
   };
 
+  const onCancelModal = (event: any) => {
+    event.stopPropagation();
+    setModalIsOpen(false);
+  };
+
   return (
     <div className="App">
       <div className="ag-theme-alpine" style={{ height: 550 }}>
@@ -83,32 +88,10 @@ export default function SimpleGrid() {
         />
       </div>
 
-      <Modal
-        isOpen={modalIsOpen}
-        onRequestClose={() => setModalIsOpen(false)}
-        contentLabel="Detalhes da Linha"
-        ariaHideApp={false}
-      >
-        <h2>Detalhes da Linha Selecionada</h2>
-        {selectedRowData && (
-          <div>
-            <p><strong>Name:</strong> {selectedRowData.name}</p>
-            <p><strong>Username:</strong> {selectedRowData.username}</p>
-            <p><strong>Email:</strong> {selectedRowData.email}</p>
-            <p><strong>Phone:</strong> {selectedRowData.phone}</p>
-            <p><strong>Website:</strong> {selectedRowData.website}</p>
-
-            <h2>Address</h2>
-            <p><strong>Street:</strong> {selectedRowData.address.street}</p>
-            <p><strong>Suite:</strong> {selectedRowData.address.suite}</p>
-            <p><strong>City:</strong> {selectedRowData.address.city}</p>
-            <p><strong>Zipcode:</strong> {selectedRowData.address.zipcode}</p>
-
-            <Map latitude={-33.8397011} longitude={151.2057175} />
-          </div>
-        )}
-        <button onClick={() => setModalIsOpen(false)}>Fechar</button>
+      <Modal title={"Contact"} open={modalIsOpen} footer={null} destroyOnClose={true} onCancel={onCancelModal} bodyStyle={{ overflowY: 'auto', maxHeight: 'calc(100vh - 200px)' }}>
+        <ModalContent contentData={selectedRowData} />
       </Modal>
+
     </div>
   );
 }

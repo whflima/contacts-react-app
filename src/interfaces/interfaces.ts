@@ -55,3 +55,7 @@ export interface MapProps {
   latitude: number
   longitude: number
 }
+
+export interface ModalContentProps {
+  contentData: User | any
+}

@@ -1,4 +1,3 @@
-import React from 'react';
 import { MapProps } from '../interfaces/interfaces';
 import GoogleMapReact from 'google-map-react';
 import { IoLocation } from "react-icons/io5";
@@ -17,7 +16,7 @@ export default function Map({ latitude, longitude }: MapProps) {
     };
 
     return (
-        <div style={{ height: '50vh', width: '100%' }}>
+        <div style={{ height: '30vh', width: '100%' }}>
             <GoogleMapReact
                 bootstrapURLKeys={{ key: "AIzaSyAlm5FzjzdT911Ep7JvKQJr2imRB8eBFoQ" }}
                 defaultCenter={defaultProps.center}
