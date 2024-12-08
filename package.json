@@ -28,6 +28,8 @@
   },
   "scripts": {
     "start": "react-scripts start",
+    "predeploy" : "npm run build",
+    "deploy" : "gh-pages -d build",
     "build": "react-scripts build",
     "test": "react-scripts test",
     "eject": "react-scripts eject"
@@ -58,6 +60,7 @@
     "eslint-import-resolver-typescript": "^3.7.0",
     "eslint-plugin-prettier": "^5.2.1",
     "eslint-plugin-react": "^7.37.2",
+    "gh-pages": "^6.2.0",
     "globals": "^15.13.0",
     "prettier": "^3.4.2",
     "typescript-eslint": "^8.17.0"

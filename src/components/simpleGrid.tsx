@@ -5,8 +5,15 @@ import '@ag-grid-community/styles/ag-grid.css';
 import '@ag-grid-community/styles/ag-theme-alpine.css';
 import api from '../services/api';
 import { User } from '../interfaces/interfaces';
-import { Modal } from 'antd';
+import { Button, FloatButton, Modal, Tooltip } from 'antd';
 import ModalContent from './ModalContent';
+import { EyeOutlined } from '@ant-design/icons';
+
+const CustomButtonComponent = () => {
+  return (
+      <Button className="action-button" type="text" shape="circle" icon={<EyeOutlined />} />
+  );
+};
 
 export default function SimpleGrid() {
   const [gridApi, setGridApi] = useState<any>();
@@ -24,18 +31,19 @@ export default function SimpleGrid() {
   }, []);
 
   const defaultColDef = {
-    flex: 1,
+    flex: 2,
     resizable: true,
     sortable: true,
     filter: true
   }
 
   const colDefs: any[] = [
-    { headerName: "Name", field: "name", filter: true },
-    { headerName: "Username", field: "username", filter: true },
-    { headerName: "Phone", field: "phone", filter: true },
-    { headerName: "Email", field: "email", filter: true },
-    { headerName: "Website", field: "website", filter: true },
+    { headerName: "Actions", field: 'actions', cellRenderer: CustomButtonComponent, flex: 1, resizable: false, filter: false },
+    { headerName: "Name", field: "name" },
+    { headerName: "Username", field: "username" },
+    { headerName: "Phone", field: "phone" },
+    { headerName: "Email", field: "email" },
+    { headerName: "Website", field: "website" },
   ];
 
   const handleResize = (gridApi: any) => {
@@ -43,7 +51,7 @@ export default function SimpleGrid() {
     if (gridApi && gridApi.api) {
       const sizeScreen = window.innerWidth;
       const currentState = gridApi.api.getColumnState();
-      let columnSuported = Math.floor(sizeScreen / 280);
+      let columnSuported = Math.ceil(sizeScreen / 250);
 
       currentState.forEach((colState: any) => {
         if (columnSuported > 0) {
@@ -60,7 +68,8 @@ export default function SimpleGrid() {
     setGridApi(params.api);
 
     params.api.addGlobalListener((type: string, e: any) => {
-      if (type === "gridSizeChanged" || type === "columnResized") {
+      if (type === "dataTypesInferred" || type === "gridSizeChanged" || type === "columnResized") {
+        console.log(type);
         handleResize(e);
       }
     });
