@@ -1,6 +1,7 @@
 {
   "name": "contacts-app",
   "version": "0.1.0",
+  "homepage": "https://whflima.github.io/contacts-react-app/",
   "private": true,
   "dependencies": {
     "@ag-grid-community/styles": "^32.3.3",
