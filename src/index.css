@@ -104,6 +104,10 @@ body {
 }
 
 @media screen and (max-width: 600px) {
+  :where(.css-1wwf28x).ant-modal-root .ant-modal {
+    margin: 0;
+  }
+  
   :where(.css-dev-only-do-not-override-1wwf28x).ant-modal-root .ant-modal {
     margin: 0;
   }
