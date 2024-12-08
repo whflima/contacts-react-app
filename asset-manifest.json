@@ -1,13 +1,13 @@
 {
   "files": {
-    "main.css": "/contacts-react-app/static/css/main.5b402688.css",
+    "main.css": "/contacts-react-app/static/css/main.437a0813.css",
     "main.js": "/contacts-react-app/static/js/main.fb7a3486.js",
     "index.html": "/contacts-react-app/index.html",
-    "main.5b402688.css.map": "/contacts-react-app/static/css/main.5b402688.css.map",
+    "main.437a0813.css.map": "/contacts-react-app/static/css/main.437a0813.css.map",
     "main.fb7a3486.js.map": "/contacts-react-app/static/js/main.fb7a3486.js.map"
   },
   "entrypoints": [
-    "static/css/main.5b402688.css",
+    "static/css/main.437a0813.css",
     "static/js/main.fb7a3486.js"
   ]
 }
