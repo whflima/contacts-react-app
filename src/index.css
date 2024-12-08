@@ -65,6 +65,7 @@ body {
 
 .contact-map {
   margin-top: 10px;
+  margin-right: 5px
 }
 
 .ag-theme-alpine .ag-root-wrapper  {
@@ -107,7 +108,7 @@ body {
   :where(.css-1wwf28x).ant-modal-root .ant-modal {
     margin: 0;
   }
-  
+
   :where(.css-dev-only-do-not-override-1wwf28x).ant-modal-root .ant-modal {
     margin: 0;
   }
