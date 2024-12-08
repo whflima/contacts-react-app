@@ -11,7 +11,7 @@ import { EyeOutlined } from '@ant-design/icons';
 
 const CustomButtonComponent = () => {
   return (
-      <Button className="action-button" type="text" shape="circle" icon={<EyeOutlined />} />
+    <Button className="action-button" type="text" shape="circle" icon={<EyeOutlined />} />
   );
 };
 
@@ -63,13 +63,12 @@ export default function SimpleGrid() {
       });
     }
   };
-
+  
   const onGridReady = (params: any) => {
     setGridApi(params.api);
 
     params.api.addGlobalListener((type: string, e: any) => {
       if (type === "dataTypesInferred" || type === "gridSizeChanged" || type === "columnResized") {
-        console.log(type);
         handleResize(e);
       }
     });

@@ -94,6 +94,25 @@ body {
   background-color: gray;
 }
 
-:where(.css-dev-only-do-not-override-1wwf28x).ant-descriptions .ant-descriptions-row >th, :where(.css-dev-only-do-not-override-1wwf28x).ant-descriptions .ant-descriptions-row >td {
+:where(.css-dev-only-do-not-override-1wwf28x).ant-descriptions .ant-descriptions-row>th,
+:where(.css-dev-only-do-not-override-1wwf28x).ant-descriptions .ant-descriptions-row>td {
   padding-bottom: 5px;
+}
+
+@media screen and (max-width: 600px) {
+  :where(.css-dev-only-do-not-override-1wwf28x).ant-modal-root .ant-modal {
+    margin: 0;
+  }
+
+  .ant-modal,
+  .ant-modal-content {
+    height: 100vh;
+    width: 100vw;
+    margin: 0;
+    top: 0;
+  }
+
+  .body {
+    background-color: black;
+  }
 }
