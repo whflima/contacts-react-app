@@ -17,6 +17,10 @@ Watch the video below for a quick demo of how the application works:
 
 ![video-contacts-app](https://github.com/user-attachments/assets/f6da516a-5f50-4e6c-b815-aa0d6ee982fa)
 
+## Prerequisites
+- Node.js (v14.0 or higher)
+- npm (v10.4.0 or higher)
+
 ## Clone
 
 Run the following command to clone this project to your local machine:
@@ -42,6 +46,16 @@ npm install
 ```
 
 It will install all the necessary packages listed in the package.json file.
+
+## Start
+
+Run the following command to start the development server:
+
+```sh
+npm run start
+```
+
+Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
 
 ## Author
 
