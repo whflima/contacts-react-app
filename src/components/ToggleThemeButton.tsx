@@ -1,7 +1,7 @@
 import { Button } from 'antd';
 import { HiOutlineSun, HiOutlineMoon } from 'react-icons/hi';
-import useIsMobile from './useIsMobile';
-import { useThemeProvider } from './ThemeProvider';
+import useIsMobile from '../utils/useIsMobile';
+import { useThemeProvider } from '../providers/ThemeProvider';
 
 export default function ToggleThemeButton() {
   const { isThemeDark, changeTheme } = useThemeProvider();

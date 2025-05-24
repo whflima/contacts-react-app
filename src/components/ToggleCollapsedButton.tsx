@@ -1,7 +1,7 @@
 import { Button } from 'antd';
 import { MenuUnfoldOutlined, MenuFoldOutlined } from '@ant-design/icons';
-import useIsMobile from './useIsMobile';
-import { useCollapsedProvider } from './CollapsedProvider';
+import useIsMobile from '../utils/useIsMobile';
+import { useCollapsedProvider } from '../providers/CollapsedProvider';
 
 export default function ToggleCollapsedButton() {
   const isMobile = useIsMobile();

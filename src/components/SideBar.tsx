@@ -1,11 +1,11 @@
 import { useState } from 'react';
 import Logo from './Logo';
 import MenuList from './Menu';
-import useIsMobile from './useIsMobile';
+import useIsMobile from '../utils/useIsMobile';
 import { Layout, MenuTheme } from 'antd';
 import styled from 'styled-components';
-import { useThemeProvider } from './ThemeProvider';
-import { useCollapsedProvider } from './CollapsedProvider';
+import { useThemeProvider } from '../providers/ThemeProvider';
+import { useCollapsedProvider } from '../providers/CollapsedProvider';
 
 const { Sider } = Layout;
 

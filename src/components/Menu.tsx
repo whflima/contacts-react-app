@@ -1,6 +1,6 @@
 import { Menu, MenuTheme } from 'antd';
 import { HomeOutlined, ContactsOutlined, SettingOutlined } from '@ant-design/icons';
-import { useThemeProvider } from './ThemeProvider';
+import { useThemeProvider } from '../providers/ThemeProvider';
 
 export default function MenuList() {
     const { theme } = useThemeProvider();

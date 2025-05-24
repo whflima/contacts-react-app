@@ -1,5 +1,5 @@
 import { useEffect, useState } from 'react';
-import { isMobileScreen } from '../utils/mobileScreen';
+import { isMobileScreen } from './mobileScreen';
 
 export default function useIsMobile(): boolean {
   const [isMobile, setIsMobile] = useState(isMobileScreen());
