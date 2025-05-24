@@ -44,7 +44,12 @@ export interface Columns {
 
 export interface ToggleThemeButtonProps {
   darkTheme: boolean
-  toggleTheme: any
+  setToggleTheme: any
+}
+
+export interface ToggleCollapsedButtonProps {
+  collapsed: boolean
+  setCollapsed: any
 }
 
 export interface MenuListProps {
