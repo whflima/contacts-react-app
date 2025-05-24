@@ -1,11 +1,12 @@
-import React from 'react';
-import { Menu } from 'antd';
+import { Menu, MenuTheme } from 'antd';
 import { HomeOutlined, ContactsOutlined, SettingOutlined } from '@ant-design/icons';
-import { MenuListProps } from '../interfaces/interfaces';
+import { useThemeProvider } from './ThemeProvider';
 
-export default function MenuList({ darkTheme }: MenuListProps) {
+export default function MenuList() {
+    const { theme } = useThemeProvider();
+
     return (
-        <Menu theme={darkTheme ? "dark" : "light"} mode="inline" className="menu-bar">
+        <Menu theme={theme as MenuTheme} mode="inline" className="menu-bar">
             <Menu.Item key="home" icon={<HomeOutlined />} disabled>
                 Home
             </Menu.Item>

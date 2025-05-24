@@ -44,16 +44,12 @@ export interface Columns {
 
 export interface ToggleThemeButtonProps {
   darkTheme: boolean
-  setToggleTheme: any
+  setToggleTheme1: any
 }
 
 export interface ToggleCollapsedButtonProps {
   collapsed: boolean
   setCollapsed: any
-}
-
-export interface MenuListProps {
-  darkTheme: boolean
 }
 
 export interface MapProps {

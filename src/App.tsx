@@ -3,24 +3,16 @@ import './App.css';
 import '@ag-grid-community/styles/ag-grid.css';
 import '@ag-grid-community/styles/ag-theme-alpine.css';
 import { Layout, theme } from 'antd';
-import Logo from './components/Logo';
-import MenuList from './components/Menu';
 import ToggleThemeButton from './components/ToggleThemeButton';
 import SimpleGrid from './components/SimpleGrid';
 import { Content } from 'antd/es/layout/layout';
 import ToggleCollapsedButton from './components/ToggleCollapsedButton';
-import useIsMobile from './components/useIsMobile';
+import SideBar from './components/SideBar';
 
 const { Header, Sider } = Layout;
 
 export default function App() {
-  const isMobile = useIsMobile();
-  const [darkTheme, setDarkTheme] = useState(true);
   const [collapsed, setCollapsed] = useState(false);
-
-  const toggleTheme = () => {
-    setDarkTheme(!darkTheme);
-  };
 
   const toggleCollapsed = () => {
     setCollapsed(!collapsed);
@@ -32,16 +24,7 @@ export default function App() {
 
   return (
     <Layout>
-      <Sider
-        collapsed={isMobile ? true : collapsed}
-        collapsible
-        trigger={null}
-        theme={darkTheme ? 'dark' : 'light'}
-        className="sidebar"
-      >
-        <Logo />
-        <MenuList darkTheme={darkTheme} />
-      </Sider>
+      <SideBar />
       <Layout>
         <Header
           style={{
@@ -53,7 +36,7 @@ export default function App() {
           }}
         >
           <ToggleCollapsedButton collapsed setCollapsed={toggleCollapsed} />
-          <ToggleThemeButton darkTheme setToggleTheme={toggleTheme} />
+          <ToggleThemeButton />
         </Header>
         <Content
           style={{

@@ -1,3 +1,3 @@
 export function isMobileScreen(){
-    return window.innerWidth < 400;
+    return window.innerWidth < 550;
 }

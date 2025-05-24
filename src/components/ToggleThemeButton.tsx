@@ -1,20 +1,18 @@
 import { Button } from 'antd';
 import { HiOutlineSun, HiOutlineMoon } from 'react-icons/hi';
-import { ToggleThemeButtonProps } from '../interfaces/interfaces';
 import useIsMobile from './useIsMobile';
+import { useThemeProvider } from './ThemeProvider';
 
-export default function ToggleThemeButton({
-  darkTheme,
-  setToggleTheme,
-}: ToggleThemeButtonProps) {
+export default function ToggleThemeButton() {
+  const { isThemeDark, changeTheme } = useThemeProvider();
   const isMobile = useIsMobile();
   const className = isMobile
     ? 'toggle-theme-button-mobile'
     : 'toggle-theme-button';
 
   return (
-    <Button onClick={setToggleTheme} className={className}>
-      {darkTheme ? <HiOutlineSun /> : <HiOutlineMoon />}
+    <Button onClick={changeTheme} className={className}>
+      {isThemeDark ? <HiOutlineSun /> : <HiOutlineMoon />}
     </Button>
   );
 }

@@ -36,6 +36,10 @@ body {
 }
 
 .toggle-theme-button {
+  margin-right: 15px;
+}
+
+.toggle-theme-button-mobile {
   position: fixed;
   bottom: 20px;
   left: 20px;
@@ -65,10 +69,10 @@ body {
 
 .contact-map {
   margin-top: 10px;
-  margin-right: 5px
+  margin-right: 5px;
 }
 
-.ag-theme-alpine .ag-root-wrapper  {
+.ag-theme-alpine .ag-root-wrapper {
   border: none;
 }
 
@@ -99,8 +103,12 @@ body {
   background-color: gray;
 }
 
-:where(.css-dev-only-do-not-override-1wwf28x).ant-descriptions .ant-descriptions-row>th,
-:where(.css-dev-only-do-not-override-1wwf28x).ant-descriptions .ant-descriptions-row>td {
+:where(.css-dev-only-do-not-override-1wwf28x).ant-descriptions
+  .ant-descriptions-row
+  > th,
+:where(.css-dev-only-do-not-override-1wwf28x).ant-descriptions
+  .ant-descriptions-row
+  > td {
   padding-bottom: 5px;
 }
 
