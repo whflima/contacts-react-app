@@ -1,23 +1,14 @@
-import { useState } from 'react';
 import './App.css';
 import '@ag-grid-community/styles/ag-grid.css';
 import '@ag-grid-community/styles/ag-theme-alpine.css';
 import { Layout, theme } from 'antd';
 import ToggleThemeButton from './components/ToggleThemeButton';
 import SimpleGrid from './components/SimpleGrid';
-import { Content } from 'antd/es/layout/layout';
+import { Content, Header } from 'antd/es/layout/layout';
 import ToggleCollapsedButton from './components/ToggleCollapsedButton';
 import SideBar from './components/SideBar';
 
-const { Header, Sider } = Layout;
-
 export default function App() {
-  const [collapsed, setCollapsed] = useState(false);
-
-  const toggleCollapsed = () => {
-    setCollapsed(!collapsed);
-  };
-
   const {
     token: { colorBgContainer, borderRadiusLG },
   } = theme.useToken();
@@ -35,7 +26,7 @@ export default function App() {
             background: colorBgContainer,
           }}
         >
-          <ToggleCollapsedButton collapsed setCollapsed={toggleCollapsed} />
+          <ToggleCollapsedButton />
           <ToggleThemeButton />
         </Header>
         <Content

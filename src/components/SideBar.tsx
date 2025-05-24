@@ -5,6 +5,7 @@ import useIsMobile from './useIsMobile';
 import { Layout, MenuTheme } from 'antd';
 import styled from 'styled-components';
 import { useThemeProvider } from './ThemeProvider';
+import { useCollapsedProvider } from './CollapsedProvider';
 
 const { Sider } = Layout;
 
@@ -18,7 +19,7 @@ const CustomSider = styled(Sider)`
 export default function SideBar() {
   const isMobile = useIsMobile();
   const { theme } = useThemeProvider();
-  const [collapsed, setCollapsed] = useState(false);
+  const { collapsed } = useCollapsedProvider();
 
   const handleSideBarItems = () => {
     return (

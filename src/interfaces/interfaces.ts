@@ -42,16 +42,6 @@ export interface Columns {
     accessor: string
 }
 
-export interface ToggleThemeButtonProps {
-  darkTheme: boolean
-  setToggleTheme1: any
-}
-
-export interface ToggleCollapsedButtonProps {
-  collapsed: boolean
-  setCollapsed: any
-}
-
 export interface MapProps {
   latitude: number
   longitude: number
