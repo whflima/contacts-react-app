@@ -11,17 +11,17 @@ export default function DropDownLanguage() {
   const languages = [
     {
       key: 'en',
-      img: 'australia-flag.svg',
+      img: './australia-flag.svg',
       expression: 'language.switcher.items-english',
     },
     {
       key: 'es',
-      img: 'spain-flag.svg',
+      img: './spain-flag.svg',
       expression: 'language.switcher.items-spanish',
     },
     {
       key: 'pt-br',
-      img: 'brazil-flag.svg',
+      img: './brazil-flag.svg',
       expression: 'language.switcher.items-portuguese',
     },
   ];
@@ -33,7 +33,7 @@ export default function DropDownLanguage() {
         <a onClick={() => changeLanguage(key)}>
           <AvatarLanguage
             key={key}
-            image={`./contacts-react-app/${img}`}
+            image={img}
             expression={expression}
           />
         </a>

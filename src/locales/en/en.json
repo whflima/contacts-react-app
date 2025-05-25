@@ -8,7 +8,7 @@
   "simple-grid.collumn-email": "Email",
   "simple-grid.collumn-phone": "Phone",
   "simple-grid.collumn-website": "Website",
-  "language.switcher.flag": "./contacts-react-app/australia-flag.svg",
+  "language.switcher.flag": "./australia-flag.svg",
   "language.switcher.items-english": "English",
   "language.switcher.items-spanish": "Spanish",
   "language.switcher.items-portuguese": "Portuguese"
