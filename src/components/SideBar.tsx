@@ -1,10 +1,9 @@
-import { useState } from 'react';
+import React from 'react';
 import Logo from './Logo';
 import MenuList from './Menu';
 import useIsMobile from '../utils/useIsMobile';
-import { Layout, MenuTheme } from 'antd';
+import { Layout } from 'antd';
 import styled from 'styled-components';
-import { useThemeProvider } from '../providers/ThemeProvider';
 import { useCollapsedProvider } from '../providers/CollapsedProvider';
 
 const { Sider } = Layout;
@@ -18,14 +17,15 @@ const CustomSider = styled(Sider)`
 
 export default function SideBar() {
   const isMobile = useIsMobile();
-  const { theme } = useThemeProvider();
   const { collapsed } = useCollapsedProvider();
 
   const handleSideBarItems = () => {
     return (
       <>
-        <Logo />
-        <MenuList />
+        <Layout style={{ minHeight: '100vh' }}>
+          <Logo />
+          <MenuList />
+        </Layout>
       </>
     );
   };
@@ -37,7 +37,6 @@ export default function SideBar() {
           collapsed={isMobile ? true : collapsed}
           collapsible
           trigger={null}
-          theme={theme}
           className="sidebar"
         >
           {handleSideBarItems()}
@@ -49,7 +48,6 @@ export default function SideBar() {
         collapsed={isMobile ? true : collapsed}
         collapsible
         trigger={null}
-        theme={theme as MenuTheme}
         className="sidebar"
       >
         {handleSideBarItems()}

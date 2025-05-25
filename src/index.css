@@ -2,16 +2,13 @@ body {
   margin: 0;
 }
 
-.sidebar {
-  color: #fff;
-}
-
 .logo {
   display: flex;
   align-items: center;
   justify-content: center;
   color: #fff;
   padding: 10px;
+  height: 64px;
 }
 
 .logo-icon {
@@ -27,7 +24,6 @@ body {
 
 .menu-bar {
   height: 88vh;
-  margin-top: 2rem;
   display: flex;
   flex-direction: column;
   gap: 15px;
@@ -127,9 +123,5 @@ body {
     width: 100vw;
     margin: 0;
     top: 0;
-  }
-
-  .body {
-    background-color: black;
   }
 }

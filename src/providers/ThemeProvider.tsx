@@ -1,9 +1,7 @@
 import React, { createContext, useContext, useState, ReactNode } from 'react';
-
-type Theme = 'light' | 'dark';
+import { ConfigProvider, theme } from 'antd';
 
 interface ThemeContextType {
-  theme: string;
   isThemeDark: boolean;
   changeTheme: () => void;
 }
@@ -12,16 +10,21 @@ const ThemeContext = createContext<ThemeContextType | undefined>(undefined);
 
 export const ThemeProvider = ({ children }: { children: ReactNode }) => {
   const [isThemeDark, setIsThemeDark] = useState(false);
-  const [theme, setTheme] = useState<Theme>('light');
+  const { defaultAlgorithm, darkAlgorithm } = theme;
 
   const changeTheme = () => {
     setIsThemeDark(!isThemeDark);
-    setTheme(theme === 'light' ? 'dark' : 'light');
   };
 
   return (
-    <ThemeContext.Provider value={{ theme, isThemeDark, changeTheme }}>
-      {children}
+    <ThemeContext.Provider value={{ isThemeDark, changeTheme }}>
+      <ConfigProvider
+        theme={{
+          algorithm: isThemeDark ? darkAlgorithm : defaultAlgorithm,
+        }}
+      >
+        {children}
+      </ConfigProvider>
     </ThemeContext.Provider>
   );
 };

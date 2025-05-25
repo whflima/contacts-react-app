@@ -1,3 +1,4 @@
+import React from 'react';
 import { useEffect, useState } from 'react';
 import { AgGridReact } from 'ag-grid-react';
 import "ag-grid-enterprise";
@@ -5,7 +6,7 @@ import '@ag-grid-community/styles/ag-grid.css';
 import '@ag-grid-community/styles/ag-theme-alpine.css';
 import api from '../services/api';
 import { User } from '../interfaces/interfaces';
-import { Button, FloatButton, Modal, Tooltip } from 'antd';
+import { Button, Modal } from 'antd';
 import ModalContent from './ModalContent';
 import { EyeOutlined } from '@ant-design/icons';
 

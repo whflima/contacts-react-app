@@ -1,3 +1,4 @@
+import React from 'react';
 import { CollapsedProvider } from './CollapsedProvider';
 import { ThemeProvider } from './ThemeProvider';
 

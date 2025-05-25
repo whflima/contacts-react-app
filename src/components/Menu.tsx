@@ -1,12 +1,10 @@
-import { Menu, MenuTheme } from 'antd';
+import React from 'react';
+import { Menu } from 'antd';
 import { HomeOutlined, ContactsOutlined, SettingOutlined } from '@ant-design/icons';
-import { useThemeProvider } from '../providers/ThemeProvider';
 
 export default function MenuList() {
-    const { theme } = useThemeProvider();
-
     return (
-        <Menu theme={theme as MenuTheme} mode="inline" className="menu-bar">
+        <Menu mode="inline" className="menu-bar">
             <Menu.Item key="home" icon={<HomeOutlined />} disabled>
                 Home
             </Menu.Item>
