@@ -2,12 +2,13 @@ import React from 'react';
 import './App.css';
 import '@ag-grid-community/styles/ag-grid.css';
 import '@ag-grid-community/styles/ag-theme-alpine.css';
-import { Layout, theme } from 'antd';
+import { Layout, Space, theme } from 'antd';
 import ToggleThemeButton from './components/ToggleThemeButton';
 import SimpleGrid from './components/SimpleGrid';
 import { Content, Header } from 'antd/es/layout/layout';
 import ToggleCollapsedButton from './components/ToggleCollapsedButton';
 import SideBar from './components/SideBar';
+import DropDownLanguage from './components/DropDownLanguage';
 
 export default function App() {
   const {
@@ -28,7 +29,10 @@ export default function App() {
           }}
         >
           <ToggleCollapsedButton />
-          <ToggleThemeButton />
+          <Space align="center"  size={16} wrap>
+            <DropDownLanguage />
+            <ToggleThemeButton />
+          </Space>
         </Header>
         <Content
           style={{

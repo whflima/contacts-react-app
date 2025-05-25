@@ -1,6 +1,7 @@
 import React from 'react';
 import { CollapsedProvider } from './CollapsedProvider';
 import { ThemeProvider } from './ThemeProvider';
+import { LanguageProvider } from './LanguageProvider';
 
 export default function AppProviders({
   children,
@@ -8,8 +9,10 @@ export default function AppProviders({
   children: React.ReactNode;
 }) {
   return (
-    <ThemeProvider>
-      <CollapsedProvider>{children}</CollapsedProvider>
-    </ThemeProvider>
+    <LanguageProvider>
+      <ThemeProvider>
+        <CollapsedProvider>{children}</CollapsedProvider>
+      </ThemeProvider>
+    </LanguageProvider>
   );
 }

@@ -47,6 +47,12 @@ export interface MapProps {
   longitude: number;
 }
 
+export interface AvatarLanguageProps {
+  key: string;
+  image: string;
+  expression: string;
+}
+
 export interface ModalContentProps {
   contentData: User | any;
 }
