@@ -31,10 +31,6 @@ body {
   position: relative;
 }
 
-.toggle-theme-button {
-  margin-right: 15px;
-}
-
 .toggle-theme-button-mobile {
   position: fixed;
   bottom: 20px;

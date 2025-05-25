@@ -10,4 +10,10 @@ enum LocalStorageItems {
   LANGUAGE = 'language',
 }
 
-export { Language, LocalStorageItems };
+enum ThemeMode {
+  LIGHT = 'light',
+  DARK = 'dark',
+  SYSTEM = 'system',
+}
+
+export { ThemeMode, Language, LocalStorageItems };

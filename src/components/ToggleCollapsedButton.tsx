@@ -1,7 +1,8 @@
+import React from 'react';
 import { Button } from 'antd';
-import { MenuUnfoldOutlined, MenuFoldOutlined } from '@ant-design/icons';
 import useIsMobile from '../utils/useIsMobile';
 import { useCollapsedProvider } from '../providers/CollapsedProvider';
+import { MenuUnfoldOutlined, MenuFoldOutlined } from '@ant-design/icons';
 
 export default function ToggleCollapsedButton() {
   const isMobile = useIsMobile();

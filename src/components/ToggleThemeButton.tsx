@@ -1,19 +1,11 @@
 import React from 'react';
 import { Button } from 'antd';
 import { HiOutlineSun, HiOutlineMoon } from 'react-icons/hi';
-import useIsMobile from '../utils/useIsMobile';
 import { useThemeProvider } from '../providers/ThemeProvider';
 
 export default function ToggleThemeButton() {
   const { isThemeDark, changeTheme } = useThemeProvider();
-  const isMobile = useIsMobile();
-  const className = isMobile
-    ? 'toggle-theme-button-mobile'
-    : 'toggle-theme-button';
+  const icon = isThemeDark ? <HiOutlineSun /> : <HiOutlineMoon />;
 
-  return (
-    <Button onClick={changeTheme} className={className}>
-      {isThemeDark ? <HiOutlineSun /> : <HiOutlineMoon />}
-    </Button>
-  );
+  return <Button icon={icon} shape="circle" onClick={changeTheme} />;
 }
