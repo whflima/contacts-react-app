@@ -8,7 +8,7 @@
   "simple-grid.collumn-email": "Correo electrónico",
   "simple-grid.collumn-phone": "Teléfono",
   "simple-grid.collumn-website": "Sitio web",
-  "language.switcher.flag": "contacts-react-app/spain-flag.svg",
+  "language.switcher.flag": "./contacts-react-app/spain-flag.svg",
   "language.switcher.items-english": "Inglés",
   "language.switcher.items-spanish": "Español",
   "language.switcher.items-portuguese": "Portugués"

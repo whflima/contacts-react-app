@@ -33,7 +33,7 @@ export default function DropDownLanguage() {
         <a onClick={() => changeLanguage(key)}>
           <AvatarLanguage
             key={key}
-            image={`contacts-react-app/${img}`}
+            image={`./contacts-react-app/${img}`}
             expression={expression}
           />
         </a>
