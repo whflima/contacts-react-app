@@ -7,10 +7,26 @@
   resolved "https://registry.npmjs.org/@adobe/css-tools/-/css-tools-4.4.1.tgz"
   integrity sha512-12WGKBQzjUAI4ayyF4IAtfw2QR/IDoqk6jTddXDhtYTJF9ASmoE1zst7cVtP0aL/F1jUJL5r+JxKXKEgHNbEUQ==
 
+"@ag-grid-community/core@32.3.5":
+  version "32.3.5"
+  resolved "https://registry.npmjs.org/@ag-grid-community/core/-/core-32.3.5.tgz"
+  integrity sha512-RGL3RyPCKC4R2fcG1gXdk7rs+CXig23wufTFJfbE46aQDxg941ww07G0cDS5Z5u/6btM9GJkxlwcR0JVEI003A==
+  dependencies:
+    ag-charts-types "10.3.5"
+    tslib "^2.3.0"
+
 "@ag-grid-community/styles@^32.3.3":
   version "32.3.3"
   resolved "https://registry.npmjs.org/@ag-grid-community/styles/-/styles-32.3.3.tgz"
   integrity sha512-QAJc1CPbmFsAAq5M/8r0IOm8HL4Fb3eVK6tZXKzV9zibIereBjUwvvJRaSJa8iwtTlgxCtaULAQyE2gJcctphA==
+
+"@ag-grid-community/theming@^32.3.5":
+  version "32.3.5"
+  resolved "https://registry.npmjs.org/@ag-grid-community/theming/-/theming-32.3.5.tgz"
+  integrity sha512-SCToi2P2MMJ7Ce3x2/97oEN81Y6ffytvp1ngipZHvy15Jzlyzg8UHpQG/n5s7tbA71+EgaB88fHVLdM8ayf0hg==
+  dependencies:
+    "@ag-grid-community/core" "32.3.5"
+    tslib "^2.6.3"
 
 "@alloc/quick-lru@^5.2.0":
   version "5.2.0"
@@ -2854,6 +2870,11 @@ ag-charts-types@10.3.3:
   version "10.3.3"
   resolved "https://registry.npmjs.org/ag-charts-types/-/ag-charts-types-10.3.3.tgz"
   integrity sha512-8rmyquaTkwfP4Lzei/W/cbkq9wwEl8+grIo3z97mtxrMIXh9sHJK1oJipd/u08MmBZrca5Jjtn5F1+UNPu/4fQ==
+
+ag-charts-types@10.3.5:
+  version "10.3.5"
+  resolved "https://registry.npmjs.org/ag-charts-types/-/ag-charts-types-10.3.5.tgz"
+  integrity sha512-DtvV+IS4RlocGV2IcaQOe/eM6eBGGCvkLnwxGkDxKa8ddxivv90fwlfPxK0O5XnVectiKtWFfOw35Cm0k+4vMw==
 
 ag-grid-community@^23.2.0:
   version "23.2.1"
@@ -10424,7 +10445,7 @@ tslib@^1.8.1:
   resolved "https://registry.npmjs.org/tslib/-/tslib-1.14.1.tgz"
   integrity sha512-Xni35NKzjgMrwevysHTCArtLDpPvye8zV/0E4EyYn43P7/7qvQwPh9BGkHewbMulVntbigmcT7rdX3BNo9wRJg==
 
-tslib@^2.0.3, tslib@^2.6.2:
+tslib@^2.0.3, tslib@^2.3.0, tslib@^2.6.2, tslib@^2.6.3:
   version "2.8.1"
   resolved "https://registry.npmjs.org/tslib/-/tslib-2.8.1.tgz"
   integrity sha512-oJFu94HQb+KVduSUQL7wnpmqnfmLsOA/nAh6b6EH0wCEoK0/mPeXU6c3wKDV83MkOuHPRHtSXKKU99IBazS/2w==

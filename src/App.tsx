@@ -1,7 +1,5 @@
 import React from 'react';
 import './App.css';
-import '@ag-grid-community/styles/ag-grid.css';
-import '@ag-grid-community/styles/ag-theme-alpine.css';
 import { Layout, Space, theme } from 'antd';
 import ToggleThemeButton from './components/ToggleThemeButton';
 import SimpleGrid from './components/SimpleGrid';

@@ -1,4 +1,13 @@
 {
+  "menu.item-home": "Home",
+  "menu.item-contacts": "Contacts",
+  "menu.item-setting": "Setting",
+  "simple-grid.collumn-actions": "Actions",
+  "simple-grid.collumn-name": "Name",
+  "simple-grid.collumn-username": "Username",
+  "simple-grid.collumn-email": "Email",
+  "simple-grid.collumn-phone": "Phone",
+  "simple-grid.collumn-website": "Website",
   "language.switcher.flag": "contacts-react-app/australia-flag.svg",
   "language.switcher.items-english": "English",
   "language.switcher.items-spanish": "Spanish",

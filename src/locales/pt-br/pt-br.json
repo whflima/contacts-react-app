@@ -1,4 +1,13 @@
 {
+  "menu.item-home": "Início",
+  "menu.item-contacts": "Contatos",
+  "menu.item-setting": "Configurações",
+  "simple-grid.collumn-actions": "Ações",
+  "simple-grid.collumn-name": "Nome",
+  "simple-grid.collumn-username": "Nome de usuário",
+  "simple-grid.collumn-email": "Email",
+  "simple-grid.collumn-phone": "Telefone",
+  "simple-grid.collumn-website": "Website",
   "language.switcher.flag": "contacts-react-app/brazil-flag.svg",
   "language.switcher.items-english": "Inglês",
   "language.switcher.items-spanish": "Espanhol",
