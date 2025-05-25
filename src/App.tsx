@@ -2,7 +2,7 @@ import React from 'react';
 import './App.css';
 import { Layout, Space, theme } from 'antd';
 import ToggleThemeButton from './components/ToggleThemeButton';
-import SimpleGrid from './components/SimpleGrid';
+import SimpleGrid from './components/SimpleAgGridReact';
 import { Content, Header } from 'antd/es/layout/layout';
 import ToggleCollapsedButton from './components/ToggleCollapsedButton';
 import SideBar from './components/SideBar';
@@ -27,7 +27,7 @@ export default function App() {
           }}
         >
           <ToggleCollapsedButton />
-          <Space align="center"  size={16} wrap>
+          <Space align="center" size={16} wrap>
             <DropDownLanguage />
             <ToggleThemeButton />
           </Space>
