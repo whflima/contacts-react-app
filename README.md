@@ -1,9 +1,4 @@
 <h1 align="center">Welcome to Contacts App 👋</h1>
-<p>
-  <a href="https://www.npmjs.com/package/contacts-app" target="_blank">
-    <img alt="Version" src="https://img.shields.io/npm/v/contacts-app.svg">
-  </a>
-</p>
 
 > Contacts application that enables users to browse and manage their contact list across different devices easily.
 
@@ -15,7 +10,7 @@ Watch the video below for a quick demo of how the application works:
 
 > **Note:** The video may take some time to load. Please be patient.
 
-![video-contacts-app](https://github.com/user-attachments/assets/f6da516a-5f50-4e6c-b815-aa0d6ee982fa)
+![contacts-app](https://github.com/user-attachments/assets/9f135df4-3f78-4639-a03e-c5002537b4fd)
 
 ## 📁 Project Structure
 
