@@ -141,7 +141,7 @@ export default function SimpleGrid() {
       </div>
 
       <Modal
-        title={'Contact'}
+        title={t('modal.content-title')}
         open={modalIsOpen}
         footer={null}
         destroyOnClose={true}
