@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { CSSProperties } from 'react';
 import { useEffect, useState } from 'react';
 import { AgGridReact } from 'ag-grid-react';
 import 'ag-grid-enterprise';
@@ -10,7 +10,13 @@ import { EyeOutlined } from '@ant-design/icons';
 import { colorSchemeLightWarm, themeQuartz } from '@ag-grid-community/theming';
 import { useThemeProvider } from '../providers/ThemeProvider';
 import { useTranslation } from 'react-i18next';
+import useIsMobile from '../utils/useIsMobile';
 
+const bodyStyleDefault: CSSProperties = {
+  overflowY: 'auto',
+  maxHeight: 'calc(100vh - 200px)',
+};
+const bodyStyleMobile: CSSProperties = { overflowY: 'auto' };
 const themeLightWarm = themeQuartz.withPart(colorSchemeLightWarm);
 
 const myTheme = themeQuartz.withParams({
@@ -39,11 +45,13 @@ const CustomButtonComponent = () => {
 
 export default function SimpleGrid() {
   const { t } = useTranslation();
+  const isMobile = useIsMobile();
   const { isThemeDark } = useThemeProvider();
   const [gridApi, setGridApi] = useState<any>();
   const [modalIsOpen, setModalIsOpen] = useState(false);
   const [selectedRowData, setSelectedRowData] = useState<User>();
   const [users, setUsers] = useState<User[]>([]);
+  const bodyStyle = isMobile ? bodyStyleMobile : bodyStyleDefault;
   const theme = isThemeDark ? myTheme : themeLightWarm;
 
   useEffect(() => {
@@ -138,7 +146,7 @@ export default function SimpleGrid() {
         footer={null}
         destroyOnClose={true}
         onCancel={onCancelModal}
-        bodyStyle={{ overflowY: 'auto', maxHeight: 'calc(100vh - 200px)' }}
+        styles={{ body: bodyStyle }}
       >
         <ModalContent contentData={selectedRowData} />
       </Modal>
